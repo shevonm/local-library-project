@@ -1,8 +1,12 @@
 const { getBooksBorrowedCount } = require("./home");
 
 function findAccountById(accounts, id) {
-  return accounts.find((account) => account.id === id);
 
+  return accounts.filter((account) => {
+    account.id === id
+    return account
+  }).find((account) => account.id === id);
+  console.log(account)
 }
 
 function sortAccountsByLastName(accounts) {
